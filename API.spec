@@ -97,6 +97,7 @@ paddle.fluid.DistributeTranspiler.get_pserver_program ArgSpec(args=['self', 'end
 paddle.fluid.DistributeTranspiler.get_startup_program ArgSpec(args=['self', 'endpoint', 'pserver_program'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.DistributeTranspiler.get_trainer_program ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.DistributeTranspiler.transpile ArgSpec(args=['self', 'trainer_id', 'program', 'pservers', 'trainers', 'slice_var_up', 'split_method', 'sync_mode'], varargs=None, keywords=None, defaults=(None, '127.0.0.1:6174', 1, True, <class 'paddle.fluid.transpiler.ps_dispatcher.RoundRobin'>, True))
+paddle.fluid.InferenceTranspiler.__init__ 
 paddle.fluid.InferenceTranspiler.fuse_batch_norm ArgSpec(args=['self', 'program', 'place', 'scope'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.InferenceTranspiler.fuse_relu_mkldnn ArgSpec(args=['self', 'program'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.InferenceTranspiler.transpile ArgSpec(args=['self', 'program', 'place', 'scope'], varargs=None, keywords=None, defaults=(None,))
