@@ -26,7 +26,8 @@ python ${PADDLE_REPO_ROOT}/tools/print_signatures.py 'paddle.fluid' > API.spec
 The CI in the `Paddle` repo must be rerun by the generated API.spec in your own
 repo. You can rerun CI job by setting the job parameter like
 
-
+| | |
+|--- | --- |
 | `API_SPEC_URL` | `https://raw.githubusercontent.com/reyoung/FluidAPISpec/feature/add_readme.md_and_generate_new_spec/API.spec` |
 
 The URL can be obtained in your github repo and just click RAW file.
