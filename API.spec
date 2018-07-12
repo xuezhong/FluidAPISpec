@@ -414,17 +414,7 @@ paddle.fluid.CPUPlace.__init__ __init__(self: paddle.fluid.core.CPUPlace) -> Non
 paddle.fluid.CUDAPlace.__init__ __init__(self: paddle.fluid.core.CUDAPlace, arg0: int) -> None
 paddle.fluid.CUDAPinnedPlace.__init__ __init__(self: paddle.fluid.core.CUDAPinnedPlace) -> None
 paddle.fluid.ParamAttr.__init__ ArgSpec(args=['self', 'name', 'initializer', 'learning_rate', 'regularizer', 'trainable', 'gradient_clip', 'do_model_average'], varargs=None, keywords=None, defaults=(None, None, 1.0, None, True, None, False))
-paddle.fluid.ParamAttr.set_default_bias_initializer ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.ParamAttr.set_default_initializer ArgSpec(args=['self', 'initializer'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.ParamAttr.set_default_param_initializer ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.ParamAttr.to_attr ArgSpec(args=['arg'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.ParamAttr.to_kwargs ArgSpec(args=['self', 'with_initializer'], varargs=None, keywords=None, defaults=(False,))
 paddle.fluid.WeightNormParamAttr.__init__ ArgSpec(args=['self', 'dim'], varargs=None, keywords='kwargs', defaults=(None,))
-paddle.fluid.WeightNormParamAttr.set_default_bias_initializer ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.WeightNormParamAttr.set_default_initializer ArgSpec(args=['self', 'initializer'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.WeightNormParamAttr.set_default_param_initializer ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.WeightNormParamAttr.to_attr ArgSpec(args=['arg'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.WeightNormParamAttr.to_kwargs ArgSpec(args=['self', 'with_initializer'], varargs=None, keywords=None, defaults=(False,))
 paddle.fluid.DataFeeder.__init__ ArgSpec(args=['self', 'feed_list', 'place', 'program'], varargs=None, keywords=None, defaults=(None,))
 paddle.fluid.DataFeeder.decorate_reader ArgSpec(args=['self', 'reader', 'multi_devices', 'num_places', 'drop_last'], varargs=None, keywords=None, defaults=(None, True))
 paddle.fluid.DataFeeder.feed ArgSpec(args=['self', 'iterable'], varargs=None, keywords=None, defaults=None)
