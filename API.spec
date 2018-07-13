@@ -175,6 +175,7 @@ paddle.fluid.layers.sequence_reshape ArgSpec(args=['input', 'new_dim'], varargs=
 paddle.fluid.layers.transpose ArgSpec(args=['x', 'perm', 'name'], varargs=None, keywords=None, defaults=(None,))
 paddle.fluid.layers.im2sequence ArgSpec(args=['input', 'filter_size', 'stride', 'padding', 'input_image_size', 'out_stride', 'name'], varargs=None, keywords=None, defaults=(1, 1, 0, None, 1, None))
 paddle.fluid.layers.nce ArgSpec(args=['input', 'label', 'num_total_classes', 'sample_weight', 'param_attr', 'bias_attr', 'num_neg_samples'], varargs=None, keywords=None, defaults=(None, None, None, None))
+paddle.fluid.layers.hsigmoid ArgSpec(args=['input', 'label', 'num_classes', 'param_attr', 'bias_attr'], varargs=None, keywords=None, defaults=(None, None))
 paddle.fluid.layers.beam_search ArgSpec(args=['pre_ids', 'pre_scores', 'ids', 'scores', 'beam_size', 'end_id', 'level', 'name'], varargs=None, keywords=None, defaults=(0, None))
 paddle.fluid.layers.row_conv ArgSpec(args=['input', 'future_context_size', 'param_attr', 'act'], varargs=None, keywords=None, defaults=(None, None))
 paddle.fluid.layers.multiplex ArgSpec(args=['inputs', 'index'], varargs=None, keywords=None, defaults=None)
@@ -416,24 +417,13 @@ paddle.fluid.optimizer.ModelAverage.apply ArgSpec(args=[], varargs='args', keywo
 paddle.fluid.optimizer.ModelAverage.minimize ArgSpec(args=['self', 'loss', 'startup_program', 'parameter_list', 'no_grad_set'], varargs=None, keywords=None, defaults=(None, None, None))
 paddle.fluid.optimizer.ModelAverage.restore ArgSpec(args=['self', 'executor'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.backward.append_backward ArgSpec(args=['loss', 'parameter_list', 'no_grad_set', 'callbacks'], varargs=None, keywords=None, defaults=(None, None, None))
-paddle.fluid.regularizer.append_regularization_ops ArgSpec(args=['parameters_and_grads', 'regularization'], varargs=None, keywords=None, defaults=(None,))
 paddle.fluid.regularizer.L1DecayRegularizer.__init__ ArgSpec(args=['self', 'regularization_coeff'], varargs=None, keywords=None, defaults=(0.0,))
 paddle.fluid.regularizer.L2DecayRegularizer.__init__ ArgSpec(args=['self', 'regularization_coeff'], varargs=None, keywords=None, defaults=(0.0,))
 paddle.fluid.LoDTensor.__init__ 1. __init__(self: paddle.fluid.core.LoDTensor, arg0: List[List[int]]) -> None  2. __init__(self: paddle.fluid.core.LoDTensor) -> None
-paddle.fluid.LoDTensor.alloc_float 1. alloc_float(self: paddle.fluid.core.Tensor, arg0: paddle::platform::CUDAPlace) -> None  2. alloc_float(self: paddle.fluid.core.Tensor, arg0: paddle::platform::CPUPlace) -> None  3. alloc_float(self: paddle.fluid.core.Tensor, arg0: paddle::platform::CUDAPinnedPlace) -> None
-paddle.fluid.LoDTensor.alloc_int 1. alloc_int(self: paddle.fluid.core.Tensor, arg0: paddle::platform::CPUPlace) -> None  2. alloc_int(self: paddle.fluid.core.Tensor, arg0: paddle::platform::CUDAPlace) -> None  3. alloc_int(self: paddle.fluid.core.Tensor, arg0: paddle::platform::CUDAPinnedPlace) -> None
-paddle.fluid.LoDTensor.dtype dtype(self: paddle.fluid.core.Tensor) -> paddle::framework::proto::VarType_Type
-paddle.fluid.LoDTensor.get_dims get_dims(self: paddle.fluid.core.Tensor) -> List[int]
-paddle.fluid.LoDTensor.get_double_element get_double_element(self: paddle.fluid.core.Tensor, arg0: int) -> float
-paddle.fluid.LoDTensor.get_float_element get_float_element(self: paddle.fluid.core.Tensor, arg0: int) -> float
 paddle.fluid.LoDTensor.has_valid_recursive_sequence_lengths has_valid_recursive_sequence_lengths(self: paddle.fluid.core.LoDTensor) -> bool
 paddle.fluid.LoDTensor.lod lod(self: paddle.fluid.core.LoDTensor) -> List[List[int]]
 paddle.fluid.LoDTensor.recursive_sequence_lengths recursive_sequence_lengths(self: paddle.fluid.core.LoDTensor) -> List[List[int]]
 paddle.fluid.LoDTensor.set 1. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[float32], arg1: paddle::platform::CPUPlace) -> None  2. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[int32], arg1: paddle::platform::CPUPlace) -> None  3. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[float64], arg1: paddle::platform::CPUPlace) -> None  4. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[int64], arg1: paddle::platform::CPUPlace) -> None  5. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[bool], arg1: paddle::platform::CPUPlace) -> None  6. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[uint16], arg1: paddle::platform::CPUPlace) -> None  7. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[uint8], arg1: paddle::platform::CPUPlace) -> None  8. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[float32], arg1: paddle::platform::CUDAPlace) -> None  9. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[int32], arg1: paddle::platform::CUDAPlace) -> None  10. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[float64], arg1: paddle::platform::CUDAPlace) -> None  11. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[int64], arg1: paddle::platform::CUDAPlace) -> None  12. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[bool], arg1: paddle::platform::CUDAPlace) -> None  13. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[uint16], arg1: paddle::platform::CUDAPlace) -> None  14. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[uint8], arg1: paddle::platform::CUDAPlace) -> None  15. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[float32], arg1: paddle::platform::CUDAPinnedPlace) -> None  16. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[int32], arg1: paddle::platform::CUDAPinnedPlace) -> None  17. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[float64], arg1: paddle::platform::CUDAPinnedPlace) -> None  18. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[int64], arg1: paddle::platform::CUDAPinnedPlace) -> None  19. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[bool], arg1: paddle::platform::CUDAPinnedPlace) -> None  20. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[uint16], arg1: paddle::platform::CUDAPinnedPlace) -> None  21. set(self: paddle.fluid.core.Tensor, arg0: numpy.ndarray[uint8], arg1: paddle::platform::CUDAPinnedPlace) -> None
-paddle.fluid.LoDTensor.set_dims set_dims(self: paddle.fluid.core.Tensor, arg0: List[int]) -> None
-paddle.fluid.LoDTensor.set_double_element set_double_element(self: paddle.fluid.core.Tensor, arg0: int, arg1: float) -> None
-paddle.fluid.LoDTensor.set_float_element set_float_element(self: paddle.fluid.core.Tensor, arg0: int, arg1: float) -> None
-paddle.fluid.LoDTensor.set_layout set_layout(self: paddle.fluid.core.Tensor, arg0: unicode) -> None
 paddle.fluid.LoDTensor.set_lod set_lod(self: paddle.fluid.core.LoDTensor, arg0: List[List[int]]) -> None
 paddle.fluid.LoDTensor.set_recursive_sequence_lengths set_recursive_sequence_lengths(self: paddle.fluid.core.LoDTensor, arg0: List[List[int]]) -> None
 paddle.fluid.LoDTensor.shape shape(self: paddle.fluid.core.Tensor) -> List[int]
@@ -443,32 +433,15 @@ paddle.fluid.CPUPlace.__init__ __init__(self: paddle.fluid.core.CPUPlace) -> Non
 paddle.fluid.CUDAPlace.__init__ __init__(self: paddle.fluid.core.CUDAPlace, arg0: int) -> None
 paddle.fluid.CUDAPinnedPlace.__init__ __init__(self: paddle.fluid.core.CUDAPinnedPlace) -> None
 paddle.fluid.ParamAttr.__init__ ArgSpec(args=['self', 'name', 'initializer', 'learning_rate', 'regularizer', 'trainable', 'gradient_clip', 'do_model_average'], varargs=None, keywords=None, defaults=(None, None, 1.0, None, True, None, False))
-paddle.fluid.ParamAttr.set_default_bias_initializer ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.ParamAttr.set_default_initializer ArgSpec(args=['self', 'initializer'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.ParamAttr.set_default_param_initializer ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.ParamAttr.to_attr ArgSpec(args=['arg'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.ParamAttr.to_kwargs ArgSpec(args=['self', 'with_initializer'], varargs=None, keywords=None, defaults=(False,))
 paddle.fluid.WeightNormParamAttr.__init__ ArgSpec(args=['self', 'dim'], varargs=None, keywords='kwargs', defaults=(None,))
-paddle.fluid.WeightNormParamAttr.set_default_bias_initializer ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.WeightNormParamAttr.set_default_initializer ArgSpec(args=['self', 'initializer'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.WeightNormParamAttr.set_default_param_initializer ArgSpec(args=['self'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.WeightNormParamAttr.to_attr ArgSpec(args=['arg'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.WeightNormParamAttr.to_kwargs ArgSpec(args=['self', 'with_initializer'], varargs=None, keywords=None, defaults=(False,))
 paddle.fluid.DataFeeder.__init__ ArgSpec(args=['self', 'feed_list', 'place', 'program'], varargs=None, keywords=None, defaults=(None,))
 paddle.fluid.DataFeeder.decorate_reader ArgSpec(args=['self', 'reader', 'multi_devices', 'num_places', 'drop_last'], varargs=None, keywords=None, defaults=(None, True))
 paddle.fluid.DataFeeder.feed ArgSpec(args=['self', 'iterable'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.DataFeeder.feed_parallel ArgSpec(args=['self', 'iterable', 'num_places'], varargs=None, keywords=None, defaults=(None,))
 paddle.fluid.clip.ErrorClipByValue.__init__ ArgSpec(args=['self', 'max', 'min'], varargs=None, keywords=None, defaults=(None,))
-paddle.fluid.clip.ErrorClipByValue.append_clip_op ArgSpec(args=['self', 'block', 'grad_name'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.clip.GradientClipByValue.__init__ ArgSpec(args=['self', 'max', 'min'], varargs=None, keywords=None, defaults=(None,))
-paddle.fluid.clip.GradientClipByValue.create_operators ArgSpec(args=['self', 'param', 'grad'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.clip.GradientClipByValue.process_context ArgSpec(args=['self', 'context', 'param', 'grad'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.clip.GradientClipByNorm.__init__ ArgSpec(args=['self', 'clip_norm'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.clip.GradientClipByNorm.create_operators ArgSpec(args=['self', 'param', 'grad'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.clip.GradientClipByNorm.process_context ArgSpec(args=['self', 'context', 'param', 'grad'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.clip.GradientClipByGlobalNorm.__init__ ArgSpec(args=['self', 'clip_norm', 'group_name'], varargs=None, keywords=None, defaults=('default_group',))
-paddle.fluid.clip.GradientClipByGlobalNorm.create_operators ArgSpec(args=['self', 'param', 'grad'], varargs=None, keywords=None, defaults=None)
-paddle.fluid.clip.GradientClipByGlobalNorm.process_context ArgSpec(args=['self', 'context', 'param', 'grad'], varargs=None, keywords=None, defaults=None)
 paddle.fluid.profiler.cuda_profiler ArgSpec(args=[], varargs='args', keywords='kwds', defaults=None)
 paddle.fluid.profiler.reset_profiler ArgSpec(args=[], varargs=None, keywords=None, defaults=None)
 paddle.fluid.profiler.profiler ArgSpec(args=[], varargs='args', keywords='kwds', defaults=None)
